@@ -9,6 +9,6 @@ void modifyArray(double *array, int size, double value)
         arraymod[i] = array[i] + value;
 
         cout << arraymod[i] << " ";
-        cout << endl;
     }
+    cout << endl;
 }
