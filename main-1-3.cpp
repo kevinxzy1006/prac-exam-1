@@ -1,17 +1,29 @@
 #include <iostream>
+
 extern double *duplicateArray(double *array, int size);
-using namespace std;
 
 int main()
 {
-    double array[5] = {1.1, 2.2, 3.3, 4.4, 1.0};
-    int size = sizeof(array) / sizeof(array[0]);
-    double *arr = duplicateArray(array, size);
+    double originalArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+    int size = sizeof(originalArray) / sizeof(originalArray[0]);
 
-    for (int i = 0; i < size; i++)
+    double *copiedArray = duplicateArray(originalArray, size);
+
+    std::cout << "Original array: ";
+    for (int i = 0; i < size; ++i)
     {
-        cout << arr[i] << " ";
-        cout << endl;
+        std::cout << originalArray[i] << " ";
     }
+    std::cout << std::endl;
+
+    std::cout << "Copied array: ";
+    for (int i = 0; i < size; ++i)
+    {
+        std::cout << copiedArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    delete[] copiedArray;
+
     return 0;
 }
