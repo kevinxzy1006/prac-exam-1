@@ -5,18 +5,9 @@ extern void modifyArray(double *array, int size, double value);
 int main() {
     double myArray[] = {1.0, 2.0, 3.0, 4.0, 5.0};
     int size = sizeof(myArray) / sizeof(myArray[0]);
-
     double addValue = 1.5;
-
-    std::cout << "Original array: ";
-    for (int i = 0; i < size; ++i) {
-        std::cout << myArray[i] << " ";
-    }
-    std::cout << std::endl;
-
     modifyArray(myArray, size, addValue);
 
-    std::cout << "Modified array: ";
     for (int i = 0; i < size; ++i) {
         std::cout << myArray[i] << " ";
     }
