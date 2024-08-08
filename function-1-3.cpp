@@ -2,14 +2,17 @@
 
 double *duplicateArray(double *array, int size)
 {
-    double *arr = new double[size];
-
-    // Initialise the array with values (for example, using the array index)
-    for (int i = 0; i < size; i++)
+    if (size <= 0)
     {
-        arr[i] = static_cast<double>(i); // Or use another initialization method
+        return nullptr; 
     }
 
-    // Return the pointer to the array
-    return arr;
+    double *newArray = new double[size];
+
+    for (int i = 0; i < size; ++i)
+    {
+        newArray[i] = array[i];
+    }
+
+    return newArray;
 }
